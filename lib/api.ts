@@ -30,8 +30,12 @@ export async function getProduct(id: number): Promise<Product | null> {
     headers: HEADERS,
     next: { revalidate: 3600 },
   });
+<<<<<<< HEAD
   if (res.status === 404) return null;
   if (!res.ok) throw new Error(`Gagal mengambil produk (status ${res.status})`);
+=======
+  if (!res.ok) return null;
+>>>>>>> 0a04769cfc789a967fa10e7b7922fa2bca7a6f49
   const text = await res.text();
   // fakestoreapi mengembalikan body kosong jika id tidak ada
   if (!text) return null;
