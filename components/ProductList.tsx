@@ -1,17 +1,12 @@
 "use client";
 
-<<<<<<< HEAD
 import { useEffect, useMemo, useState } from "react";
-=======
-import { useMemo, useState } from "react";
->>>>>>> 0a04769cfc789a967fa10e7b7922fa2bca7a6f49
 import Image from "next/image";
 import Link from "next/link";
 import { type Product, productSlug } from "@/lib/api";
 
 const DEFAULT_COUNT = 5;
 
-<<<<<<< HEAD
 export default function ProductList({ products: initial }: { products: Product[] }) {
   const [query, setQuery] = useState("");
   const [products, setProducts] = useState<Product[]>(initial);
@@ -47,10 +42,6 @@ export default function ProductList({ products: initial }: { products: Product[]
       : status === "error"
         ? "Gagal memuat produk. Coba refresh halaman."
         : "Produk tidak ditemukan.";
-=======
-export default function ProductList({ products }: { products: Product[] }) {
-  const [query, setQuery] = useState("");
->>>>>>> 0a04769cfc789a967fa10e7b7922fa2bca7a6f49
 
   // Tanpa pencarian: tampilkan 5 produk. Dengan pencarian: cari di semua produk.
   const visible = useMemo(() => {
@@ -76,11 +67,7 @@ export default function ProductList({ products }: { products: Product[] }) {
       />
 
       {visible.length === 0 ? (
-<<<<<<< HEAD
         <p className="empty">{emptyText}</p>
-=======
-        <p className="empty">Produk tidak ditemukan.</p>
->>>>>>> 0a04769cfc789a967fa10e7b7922fa2bca7a6f49
       ) : (
         <ul className="grid">
           {visible.map((p) => (
